@@ -4,13 +4,13 @@ class PDFSerializer(serializers.HyperlinkedModelSerializer):
 
     class Meta:
         model = PDF
-        fields = ('pdf',)
+        fields = ('id', 'pdf_file',)
 
 
 class CVTestSerializer(serializers.HyperlinkedModelSerializer):
 
     class Meta:
-        model = PDF
+        model = CVTest
         fields = ('pdf_a',
                   'pdf_b',
                   'options',
