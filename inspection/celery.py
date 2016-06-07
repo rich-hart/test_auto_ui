@@ -5,7 +5,6 @@ from django.conf import settings
 CELERY_RESULT_BACKEND = 'db+{TYPE}://{USER}:{PASSWORD}@{HOST}:{PORT}/{NAME}'.format(**settings.DATABASES['default'])
 app = Celery('inspection',
              broker='django://',
-#             backend='db+postgresql://scott:tiger@localhost/{}'.format(settings['DATABASES']['default']['NAME'])
              backend=CELERY_RESULT_BACKEND,
              include=['inspection.tasks'])
 
