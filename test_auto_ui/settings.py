@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'inspection',
     'api',
     'rest_framework',
+    'kombu.transport.django',
 ]
 
 MIDDLEWARE_CLASSES = [
@@ -81,6 +82,11 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'qa_automation',
+        'USER': 'postgres',
+        'PASSWORD': 'postgres',
+        'HOST': 'localhost',
+        'PORT': '5432',
+        'TYPE': 'postgres',
     }
 }
 
@@ -122,3 +128,5 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.9/howto/static-files/
 
 STATIC_URL = '/static/'
+
+BROKER_URL = 'django://'

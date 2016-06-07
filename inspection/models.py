@@ -18,5 +18,6 @@ class CVTest(models.Model):
     pdf_a = models.ForeignKey('PDF',related_name='pdf_a')
     pdf_b = models.ForeignKey('PDF',related_name='pdf_b')
     options = models.ForeignKey('Option')
+    test_created = models.DateTimeField(auto_now_add=True)
     results = models.TextField()
 
