@@ -4,8 +4,7 @@ class PDFSerializer(serializers.HyperlinkedModelSerializer):
 
     class Meta:
         model = PDF
-        fields = ('id', 'pdf_file',)
-
+        fields = ('pdf_file',)
 class OptionSerializer(serializers.HyperlinkedModelSerializer):
 
     class Meta:

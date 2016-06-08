@@ -1,8 +1,15 @@
 from django.db import models
+import ntpath
+from django.core.files.storage import FileSystemStorage
+from django.conf import settings
+from os.path import join
+fs = FileSystemStorage(location=join(settings.MEDIA_ROOT,'pdf'))
 
 class PDF(models.Model):
-    pdf_file = models.FileField()
-
+    pdf_file = models.FileField(upload_to=join(settings.MEDIA_ROOT,'pdf'))
+    def __str__(self):
+        return ntpath.basename(self.pdf_file.name)
+        
 class Option(models.Model):
     TEST_CHOICES = (
     ('Any', 'Any'),
