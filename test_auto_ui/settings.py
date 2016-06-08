@@ -82,8 +82,8 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'qa_automation',
-        'USER': 'postgres',
-        'PASSWORD': 'postgres',
+        'USER': 'openstax',
+        'PASSWORD': 'openstax',
         'HOST': 'localhost',
         'PORT': '5432',
         'TYPE': 'postgres',
