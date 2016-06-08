@@ -14,3 +14,6 @@ class OptionViewSet(viewsets.ModelViewSet):
 class CVTestViewSet(viewsets.ModelViewSet):
     queryset = CVTest.objects.all()
     serializer_class = CVTestSerializer
+
+    def perform_create(self, serializer):
+        serializer.save()
