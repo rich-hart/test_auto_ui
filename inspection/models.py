@@ -11,12 +11,8 @@ class PDF(models.Model):
         return ntpath.basename(self.pdf_file.name)
         
 class Option(models.Model):
-    TEST_CHOICES = (
-    ('Any', 'Any'),
-    ('All', 'All'),
-    )
     name = models.CharField(max_length=128)
-    test_choices = models.CharField(max_length=3, choices=TEST_CHOICES)
+    option_string = models.CharField(max_length=256)
      
     def __str__(self):
         return self.name
