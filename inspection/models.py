@@ -12,7 +12,7 @@ class PDF(models.Model):
         
 class Option(models.Model):
     name = models.CharField(max_length=128)
-    option_string = models.CharField(max_length=256)
+    option_string = models.CharField(max_length=256, null=True)
      
     def __str__(self):
         return self.name

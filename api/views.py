@@ -18,5 +18,6 @@ class CVTestViewSet(viewsets.ModelViewSet):
 
     def perform_create(self, serializer):
         instance = serializer.save()
-        inspect.delay(instance.id)
+        inspect(instance.id)
+#        inspect.delay(instance.id)
 
