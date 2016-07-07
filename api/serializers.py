@@ -16,7 +16,7 @@ class OptionSerializer(serializers.HyperlinkedModelSerializer):
 
 
 class CVTestSerializer(serializers.HyperlinkedModelSerializer):
-
+    highlight = serializers.HyperlinkedIdentityField(view_name='result-highlight', format='html')
     class Meta:
         model = CVTest
         fields = ('id',
@@ -24,5 +24,6 @@ class CVTestSerializer(serializers.HyperlinkedModelSerializer):
                   'pdf_b',
                   'options',
                   'test_created',
-                  'results',)
+                  'results',
+                  'highlight',)
         read_only_fields = ('results','test_created')

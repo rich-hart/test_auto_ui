@@ -21,3 +21,18 @@ class CVTestViewSet(viewsets.ModelViewSet):
         inspect(instance.id)
 #        inspect.delay(instance.id)
 
+from rest_framework import generics
+from rest_framework.response import Response
+from rest_framework import renderers
+class CVTestHighlight(generics.GenericAPIView):
+    queryset = CVTest.objects.all()
+    renderer_classes = (renderers.StaticHTMLRenderer,)
+
+    def get(self, request, *args, **kwargs):
+        test = self.get_object()
+        return Response(test.results)
+
+
+
+
+
