@@ -6,13 +6,13 @@ class PDFSerializer(serializers.HyperlinkedModelSerializer):
 
     class Meta:
         model = PDF
-        fields = ('pdf_file',)
+        fields = ('id', 'pdf_file',)
 
 class OptionSerializer(serializers.HyperlinkedModelSerializer):
 
     class Meta:
         model = Option
-        fields = ('name', 'option_string',)
+        fields = ('id', 'name', 'option_string',)
 
 
 class CVTestSerializer(serializers.HyperlinkedModelSerializer):
