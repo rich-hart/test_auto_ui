@@ -22,7 +22,7 @@ class CVTestViewSet(viewsets.ModelViewSet):
 
     def perform_create(self, serializer):
         instance = serializer.save()
-        inspect(instance.id)
+        inspect.delay(instance.id)
 
 class CVTestHighlight(generics.GenericAPIView):
     queryset = CVTest.objects.all()
