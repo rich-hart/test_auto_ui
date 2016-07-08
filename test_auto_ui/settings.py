@@ -45,6 +45,10 @@ INSTALLED_APPS = [
     'kombu.transport.django',
 ]
 
+REST_FRAMEWORK = {
+    'DEFAULT_PERMISSION_CLASSES': ('rest_framework.permissions.IsAdminUser',),
+}
+
 MIDDLEWARE_CLASSES = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
@@ -132,3 +136,5 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 BROKER_URL = 'django://'
+
+

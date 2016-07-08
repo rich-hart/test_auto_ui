@@ -23,7 +23,9 @@ class CVTestSerializer(serializers.HyperlinkedModelSerializer):
                   'pdf_a',
                   'pdf_b',
                   'options',
-                  'test_created',
+                  'created',
+                  'started',
+                  'finished',
                   'results',
                   'highlight',)
-        read_only_fields = ('results','test_created')
+        read_only_fields = ('results','created','started','finished')
