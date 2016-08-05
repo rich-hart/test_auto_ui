@@ -8,6 +8,7 @@ createdb -U postgres qa_automation
 ./manage.py migrate
 ./manage.py createsuperuser
 ./manage.py runserver
+
 export DJANGO_SETTINGS_MODULE=test_auto_ui.settings
 celery -A inspection worker -l info
 ```
