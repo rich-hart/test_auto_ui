@@ -14,8 +14,8 @@ celery -A inspection worker -l info
 
 ## API Usage
 
-Upload pdfs to /api/pdfs/
-Create new options at /api/options/
-Create computer vision tests at /api/cvtests/
+Upload pdfs to ``/api/pdfs/``
+Create new options at ``/api/options/``
+Create computer vision tests at ``/api/cvtests/``
 
-To modify or delete pdfs, options, or tests locate the specify id of the object and add it to the end of the url like so: /api/{object}/{id} e.g. /api/cvtests/27. 
+To modify or delete pdfs, options, or tests locate the specify id of the object and add it to the end of the url like so: ``/api/{object}/{id}`` e.g. ``/api/cvtests/27``. 
