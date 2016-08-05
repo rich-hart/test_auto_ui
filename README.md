@@ -1,5 +1,5 @@
 
-## Install
+## Install & Run
 ``` .sh
 git clone https://github.com/rich-hart/test_auto_ui.git
 cd openstax-cms
