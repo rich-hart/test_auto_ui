@@ -26,4 +26,4 @@ The tool works best on pdfs that have had minor to moderate alterations to them.
 
 Computer vision tests are run by a worker queue so several tests can initiated at the same time.  
 
-Also this is the program the django server is running to perform the cv tests https://github.com/openstax/test-automation/tree/master/inspection. 
+This is the program the django server is running to perform the cv tests https://github.com/openstax/test-automation/tree/master/inspection. 
