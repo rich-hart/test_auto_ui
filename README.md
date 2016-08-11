@@ -1,3 +1,5 @@
+A web interface for pdf computer vision tests.
+
 ## Requirements
 * Ubuntu >= 14.10
 * Postgresql >= 9.4
@@ -5,7 +7,7 @@
 
 ## Install & Run
 
-First install computer vision script at https://github.com/openstax/test-automation/tree/master/inspection, then install the webserver:
+First install computer vision script at https://github.com/rich-hart/inspection, then install the webserver:
 
 ``` .sh
 git clone https://github.com/rich-hart/test_auto_ui.git
@@ -21,7 +23,7 @@ createdb -U postgres qa_automation
 ./manage.py runserver
 ```
 
-In another terminal got to the test_auto_ui directory and start the worker queue:
+In another terminal go to the test_auto_ui directory and start the worker queue:
 ```
 export DJANGO_SETTINGS_MODULE=test_auto_ui.settings
 celery -A inspection worker -l info
