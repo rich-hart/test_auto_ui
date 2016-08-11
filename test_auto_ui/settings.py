@@ -137,4 +137,4 @@ STATIC_URL = '/static/'
 
 BROKER_URL = 'django://'
 
-
+ENABLE_WORKER_QUEUE = True

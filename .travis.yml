@@ -1,0 +1,23 @@
+language: python
+python:
+- '3.5'
+addons:
+  postgresql: '9.4'
+before_install:
+- pip install coverage
+- pip install coveralls
+install:
+- pip install -r requirements/dev.txt
+before_script:
+- createdb -U postgres qa_automation
+- createuser -U postgres --superuser openstax
+script:
+- coverage run manage.py test --verbosity=2 --liveserver=127.0.0.1:8001
+after_success:
+- coveralls
+notifications:
+  email: false
+sudo: false
+env:
+   - DJANGO_SETTINGS_MODULE=test_auto_ui.settings
+   
