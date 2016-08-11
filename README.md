@@ -1,7 +1,7 @@
 ## Requirements
-Ubuntu >= 14.10
-Postgresql >= 9.3
-Python >= 3.5
+* Ubuntu >= 14.10
+* Postgresql >= 9.3
+* Python >= 3.5
 
 ## Install & Run
 
