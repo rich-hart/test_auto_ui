@@ -1,0 +1,34 @@
+- model: inspection.PDF
+  pk: 1
+  fields:
+    pdf_file: pdfs/A.pdf
+- model: inspection.PDF
+  pk: 2
+  fields:
+    pdf_file: pdfs/B.pdf
+- model: inspection.PDF
+  pk: 3
+  fields:
+    pdf_file: pdfs/C.pdf
+- model: inspection.PDF
+  pk: 4
+  fields:
+    pdf_file: pdfs/D.pdf
+- model: inspection.PDF
+  pk: 5
+  fields:
+    pdf_file: pdfs/E.pdf
+- model: inspection.PDF
+  pk: 6
+  fields:
+    pdf_file: pdfs/F.pdf
+- model: inspection.Option
+  pk: 1
+  fields:
+    name: "Default (diff, debug)"
+    option_string: "--diff --debug"
+- model: inspection.Option
+  pk: 2
+  fields:
+    name: "Very Large PDF Compare (1000+ page pdfs)"
+    option_string: "--diff --debug --window=3"

@@ -1,14 +1,28 @@
+## Requirements
+Ubuntu >= 14.10
+Postgresql >= 9.3
+Python >= 3.5
 
 ## Install & Run
+
+First install inspection dependencies at https://github.com/openstax/test-automation/tree/master/inspection, then install the webserver:
+
 ``` .sh
 git clone https://github.com/rich-hart/test_auto_ui.git
-cd openstax-cms
+cd test_auto_ui
+virtualenv -p $(which python3.5) venv
+source venv/bin/activate
+pip install -U pip
 pip install -r requirements/dev.txt
 createdb -U postgres qa_automation
 ./manage.py migrate
+./manage.py loaddata fixture.yaml 
 ./manage.py createsuperuser
 ./manage.py runserver
+```
 
+In another terminal got to the test_auto_ui directory and start the worker queue:
+```
 export DJANGO_SETTINGS_MODULE=test_auto_ui.settings
 celery -A inspection worker -l info
 ```

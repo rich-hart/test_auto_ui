@@ -3,3 +3,4 @@ psycopg2==2.6
 djangorestframework==3.3.3
 celery==3.1.23
 sqlalchemy==1.0.13
+PyYAML==3.11
