@@ -45,9 +45,14 @@ def inspect(test_id):
         command = "ox_inspect {0} {1} {2}".format(options or '',
                                                   temp_pdf_a_path, 
                                                   temp_pdf_b_path)
-
-        cvtest.results = subprocess.check_output(command.split())
-    cvtest.finished = datetime.now()
-    cvtest.save() 
-    return cvtest.results
+        try:
+            cvtest.results = subprocess.check_output(command.split())
+            cvtest.finished = datetime.now()
+        except FileNotFoundError as e:
+            if 'ox_inspect' in e.strerror:
+                cvtest.results = "Error ox_inspect executable missing.\n"\
+                                 "Make sure https://github.com/rich-hart/inspection is installed"
+        finally:
+            cvtest.save()
+            return cvtest.results
     

@@ -6,7 +6,7 @@ from inspection.tasks import inspect
 from rest_framework import generics
 from rest_framework.response import Response
 from rest_framework import renderers
-
+from django.conf import settings
 
 class PDFViewSet(viewsets.ModelViewSet):
     queryset = PDF.objects.all()
@@ -22,7 +22,10 @@ class CVTestViewSet(viewsets.ModelViewSet):
 
     def perform_create(self, serializer):
         instance = serializer.save()
-        inspect.delay(instance.id)
+        if settings.ENABLE_WORKER_QUEUE:
+            inspect.delay(instance.id)
+        else:
+            inspect(instance.id)
 
 class CVTestHighlight(generics.GenericAPIView):
     queryset = CVTest.objects.all()
