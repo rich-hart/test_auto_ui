@@ -1,11 +1,11 @@
 ## Requirements
 * Ubuntu >= 14.10
-* Postgresql >= 9.3
+* Postgresql >= 9.4
 * Python >= 3.5
 
 ## Install & Run
 
-First install inspection dependencies at https://github.com/openstax/test-automation/tree/master/inspection, then install the webserver:
+First install computer vision script at https://github.com/openstax/test-automation/tree/master/inspection, then install the webserver:
 
 ``` .sh
 git clone https://github.com/rich-hart/test_auto_ui.git
