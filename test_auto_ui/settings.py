@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'api',
     'rest_framework',
     'kombu.transport.django',
+    'rest_framework_swagger',
 ]
 
 REST_FRAMEWORK = {
