@@ -44,3 +44,8 @@ To modify or delete pdfs, options, or tests locate the specify id of the object 
 The tool works best on pdfs that have had minor to moderate alterations to them.  Tests on PDFs that are around several hundred pages long can take a few hours to run.  PDFs over 1000 pages should be run over night.
 
 Computer vision tests are run by a worker queue so several tests can initiated at the same time.
+
+## Heroku
+
+heroku config:set BUILDPACK_URL=https://github.com/slobdell/heroku-buildpack-python-opencv-scipy
+
