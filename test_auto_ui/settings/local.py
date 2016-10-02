@@ -10,7 +10,7 @@ DATABASES = {
         'USER': url.username,
         'PASSWORD': url.password,
         'HOST': url.hostname,
-        'PORT': url.port,,
+        'PORT': url.port,
         'TYPE': 'postgres',
     }
 }
