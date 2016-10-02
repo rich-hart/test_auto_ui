@@ -47,7 +47,11 @@ INSTALLED_APPS = [
 ]
 
 REST_FRAMEWORK = {
-    'DEFAULT_PERMISSION_CLASSES': ('rest_framework.permissions.IsAdminUser',),
+    'DEFAULT_PERMISSION_CLASSES': (
+#        'rest_framework.permissions.IsAdminUser',
+#        'rest_framework.permissions.IsAuthenticated',
+        'rest_framework.permissions.AllowAny',
+    ),
 }
 
 MIDDLEWARE_CLASSES = [
@@ -139,3 +143,8 @@ STATIC_URL = '/static/'
 BROKER_URL = 'django://'
 
 ENABLE_WORKER_QUEUE = True
+
+LOGIN_URL = 'rest_framework:login'
+
+LOGOUT_URL = 'rest_framework:logout'
+

@@ -23,6 +23,7 @@ from rest_framework.decorators import api_view, renderer_classes
 from rest_framework import response
 from rest_framework import schemas
 from rest_framework_swagger.renderers import OpenAPIRenderer, SwaggerUIRenderer
+from django.contrib.auth import views as auth_views
 
 
 @api_view()
@@ -31,11 +32,11 @@ def schema_view(request):
     generator = schemas.SchemaGenerator(title='Computer Vision API')
     return response.Response(generator.get_schema(request=request))
 
-
 urlpatterns = [
-
-    url(r'^admin/', admin.site.urls),
+#    url(r'^admin/', admin.site.urls),
+#    url(r'^accounts/login/$', auth_views.login),
+    url(r'^api/', include(api_urls)),
     url(r'^api-auth/', include('rest_framework.urls', namespace='rest_framework')),
     url(r'^$', schema_view),
-    url(r'^api/', include(api_urls)),
+
 ]  + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

@@ -1,3 +1,4 @@
+---
 - model: inspection.PDF
   pk: 1
   fields:
