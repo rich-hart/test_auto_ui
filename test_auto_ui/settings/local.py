@@ -4,6 +4,7 @@ import urlparse
 DEBUG = False
 
 STATIC_ROOT = '/app/test_auto_ui/static'
+STATIC_URL = '/static/'
 
 url = urlparse.urlparse(os.environ["DATABASE_URL"])
 
