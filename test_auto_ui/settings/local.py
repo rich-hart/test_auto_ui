@@ -10,3 +10,7 @@ DATABASES= { 'default': db_env}
 MEDIA_ROOT = '/app/test_auto_ui/media'
 MEDIA_URL =  '/media/'
 
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, "static"),
+    '/app/test_auto_ui/static',
+]
