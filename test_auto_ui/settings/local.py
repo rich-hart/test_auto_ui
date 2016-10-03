@@ -3,6 +3,8 @@ import urlparse
 
 DEBUG = False
 
+STATIC_ROOT = '/app/test_auto_ui/static'
+
 url = urlparse.urlparse(os.environ["DATABASE_URL"])
 
 DATABASES = {
