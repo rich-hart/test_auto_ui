@@ -8,5 +8,5 @@ DATABASES= { 'default': db_env}
 
 
 MEDIA_ROOT = '/app/test_auto_ui/static'
-MEDIA_URL =  '/static/'
+MEDIA_URL =  '/media/'
 
