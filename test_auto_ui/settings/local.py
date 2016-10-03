@@ -13,5 +13,4 @@ MEDIA_URL =  '/media/'
 
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, "media"),
-    '/app/test_auto_ui/static',
 ]
