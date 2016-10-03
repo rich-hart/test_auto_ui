@@ -1,6 +1,8 @@
 import os
 import urlparse
 
+DEBUG = False
+
 url = urlparse.urlparse(os.environ["DATABASE_URL"])
 
 DATABASES = {
