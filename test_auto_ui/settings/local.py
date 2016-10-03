@@ -1,7 +1,7 @@
 import os
 import urlparse
 
-DEBUG = False
+DEBUG = True
 
 PROJECT_ROOT = os.path.dirname(os.path.abspath(__file__))
 
