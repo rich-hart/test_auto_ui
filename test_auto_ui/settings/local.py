@@ -1,5 +1,6 @@
 import os
 import urlparse
+import dj_database_url
 
 DEBUG = True
 
@@ -19,14 +20,5 @@ urlparse.uses_netloc.append("postgres")
 
 url = urlparse.urlparse(os.environ["DATABASE_URL"])
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': url.path[1:],
-        'USER': url.username,
-        'PASSWORD': url.password,
-        'HOST': url.hostname,
-        'PORT': url.port,
-        'TYPE': 'postgres',
-    }
-}
+DATABASES['default'] =  dj_database_url.config()
+
