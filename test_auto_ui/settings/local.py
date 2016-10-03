@@ -1,3 +1,4 @@
+from .base import BASE_DIR
 import os
 import dj_database_url
 
