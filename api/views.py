@@ -68,10 +68,11 @@ class OptionViewSet(viewsets.ModelViewSet):
 class CVTestViewSet(viewsets.ModelViewSet):
     queryset = CVTest.objects.all()
     serializer_class = CVTestSerializer
-    permission_classes = (
-        IsAuthenticatedOrReadOnly,
-    )
-
+    if not settings.DEMO:
+        permission_classes = (
+            IsAuthenticatedOrReadOnly,
+        )
+    
     def perform_create(self, serializer):
         instance = serializer.save()
         if settings.ENABLE_WORKER_QUEUE:
@@ -85,6 +86,7 @@ class CVTestHighlight(generics.GenericAPIView):
     permission_classes = (
         IsAuthenticatedOrReadOnly,
     )
+
     def get(self, request, *args, **kwargs):
         test = self.get_object()
         if test.results:
