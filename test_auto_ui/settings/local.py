@@ -1,5 +1,3 @@
-from base import *
-
 import os
 import dj_database_url
 
@@ -9,6 +7,6 @@ db_env['TYPE'] = 'postgres'
 DATABASES= { 'default': db_env}
 
 
-MEDIA_ROOT = STATIC_ROOT
-MEDIA_URL =  STATIC_URL 
+MEDIA_ROOT = '/app/test_auto_ui/static'
+MEDIA_URL =  '/static/'
 
