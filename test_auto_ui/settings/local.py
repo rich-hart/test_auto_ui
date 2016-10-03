@@ -7,6 +7,6 @@ db_env['TYPE'] = 'postgres'
 DATABASES= { 'default': db_env}
 
 
-MEDIA_ROOT = '/app/test_auto_ui/static'
+MEDIA_ROOT = '/app/test_auto_ui/media'
 MEDIA_URL =  '/media/'
 
