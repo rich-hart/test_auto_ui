@@ -47,5 +47,5 @@ Computer vision tests are run by a worker queue so several tests can initiated a
 
 ## Heroku
 
-heroku config:set BUILDPACK_URL=https://github.com/slobdell/heroku-buildpack-python-opencv-scipy
+heroku buildpacks:set https://github.com/diogojc/heroku-buildpack-python-opencv-scipy
 
