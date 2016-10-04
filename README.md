@@ -25,7 +25,7 @@ createdb -U postgres qa_automation
 
 In another terminal go to the project root directory and start the worker queue:
 ```
-export DJANGO_SETTINGS_MODULE=test_auto_ui.settings
+export DJANGO_SETTINGS_MODULE=test_auto_ui.settings.dev
 celery -A inspection worker -l info
 ```
 

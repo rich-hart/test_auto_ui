@@ -19,5 +19,5 @@ notifications:
   email: false
 sudo: false
 env:
-   - DJANGO_SETTINGS_MODULE=test_auto_ui.settings
+   - DJANGO_SETTINGS_MODULE=test_auto_ui.settings.dev
    
