@@ -13,8 +13,8 @@ https://docs.djangoproject.com/en/1.9/ref/settings/
 import os
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
-BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-
+BASE_DIR = os.path.join(os.path.dirname(__file__), '..', '..')
+ 
 MEDIA_ROOT = os.path.join(BASE_DIR,'media')
 MEDIA_URL = '/media/'
 
@@ -30,7 +30,7 @@ SECRET_KEY = '1_=u07)6t*^n_jccm842fht_(uqzq!7ty)@7bh_prf*p&m+am)'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['127.0.0.1']
 
 
 # Application definition
@@ -146,3 +146,5 @@ LOGIN_URL = 'rest_framework:login'
 LOGOUT_URL = 'rest_framework:logout'
 
 DEMO = True
+
+#https://www.webforefront.com/django/configuredjangosettings.html
