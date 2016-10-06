@@ -25,6 +25,9 @@ from rest_framework.permissions import (
     IsAuthenticated, 
     IsAuthenticatedOrReadOnly,
 )
+
+import ntpath
+
 class UserViewSet(viewsets.ModelViewSet):
     """
     API endpoint that allows users to be viewed or edited.
@@ -89,7 +92,16 @@ class CVTestHighlight(generics.GenericAPIView):
 
     def get(self, request, *args, **kwargs):
         test = self.get_object()
+        pdf_a = ntpath.basename(test.pdf_a.pdf_file.name)
+        pdf_b = ntpath.basename(test.pdf_a.pdf_file.name)
+        response_items = { 
+            'pdf_a': pdf_a,
+            'pdf_b': pdf_b,
+            'results': None,
+        }
         if test.results:
-            return Response({'results':test.results},template_name="results.html")
+            response_items['results'] = test.results
         else:
-            return Response({'results':'Pending...'},template_name="results.html")
+            response_items['results'] = 'Pending...'
+        return Response(response_items, template_name="results.html")
+
