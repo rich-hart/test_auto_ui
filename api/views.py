@@ -93,7 +93,7 @@ class CVTestHighlight(generics.GenericAPIView):
     def get(self, request, *args, **kwargs):
         test = self.get_object()
         pdf_a = ntpath.basename(test.pdf_a.pdf_file.name)
-        pdf_b = ntpath.basename(test.pdf_a.pdf_file.name)
+        pdf_b = ntpath.basename(test.pdf_b.pdf_file.name)
         response_items = { 
             'pdf_a': pdf_a,
             'pdf_b': pdf_b,
