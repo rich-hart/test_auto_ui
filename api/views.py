@@ -27,6 +27,8 @@ from rest_framework.permissions import (
 )
 
 import ntpath
+from rest_framework.reverse import reverse
+from urllib.parse import urljoin
 
 class UserViewSet(viewsets.ModelViewSet):
     """
@@ -94,9 +96,13 @@ class CVTestHighlight(generics.GenericAPIView):
         test = self.get_object()
         pdf_a = ntpath.basename(test.pdf_a.pdf_file.name)
         pdf_b = ntpath.basename(test.pdf_b.pdf_file.name)
+        host_url = request.build_absolute_uri('/')
+        media_uri = urljoin(host_url,settings.MEDIA_URL)
         response_items = { 
-            'pdf_a': pdf_a,
-            'pdf_b': pdf_b,
+            'pdf_a_file': pdf_a,
+            'pdf_b_file': pdf_b,
+            'link_a': urljoin(media_uri, test.pdf_a.pdf_file.name),
+            'link_b': urljoin(media_uri, test.pdf_b.pdf_file.name),
             'results': None,
         }
         if test.results:
