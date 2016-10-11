@@ -1,5 +1,5 @@
 
-A web interface for pdf computer vision tests. Hosted at http://ox-inspection.cnx.org (go to http://ox-inspection.cnx.org/api/cvtests/ for demo). 
+A web interface for pdf computer vision tests. Hosted at http://ox-inspection.cnx.org 
 
 ## Requirements
 * Ubuntu >= 14.10
